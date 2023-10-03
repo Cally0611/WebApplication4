@@ -1,0 +1,124 @@
+﻿body{
+    background-color : black;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    /*    border: 1px solid #000000;*/
+  /*  text-align: left;*/
+  /*  padding: 4px;*/
+    /* border: 1px solid #000000;*/
+    border-left: 1px solid #000000;
+    
+    border-right: 1px solid #000000;
+    
+}
+
+th {
+    text-align: left;
+    padding: 4px;
+    background: #f2f2f2;
+    border: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    font: bold 10px arial, verdana;
+}
+/*tr:nth-child(even) {
+    border: 0px solid #000000;
+}
+
+tr:nth-child(odd) {
+    border: 0px solid #000000;
+}
+*/
+
+/*tr:nth-child(2n+1) {
+    text-align: left;
+    padding: 8px;
+    background: #f2f2f2;
+    border: 1px solid #000000;
+    border-bottom: 0px solid #000000;
+    font: bold 10px arial, verdana;
+}
+
+tr:nth-child(4n+1) {
+    text-align: center;
+    padding: 8px;
+    background: #f2f2f2;
+    border: 1px solid #000000;
+    border-bottom: 0px solid #000000;
+    font: bold 10px arial, verdana;
+}
+
+tr:last-child {
+   
+    border-bottom: 1px solid #000000;
+}
+*/
+/*.canvascss {*/
+ /*   background-color: #383838;*/
+    /*color: white;
+}*/
+
+/*canvas {*/ /* or some other selector */
+    /*width: 400px;
+    height: 800px;
+}*/
+
+.insidecanvas {
+    background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(97 97 97) 131%);
+}
+
+.div-1strow {
+    width: 300px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: black;
+}
+
+.div-2ndrow {
+    width: 300px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: black;
+}
+
+.div-3rdrow {
+    width: 300px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+
+
+.darkcanvas {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(103,100,100,1) 31%, rgba(97,94,96,1) 70%, rgba(15,1,1,1) 100%);
+}
+
+.dark-blue-grad {
+    border: 8px solid #959292;
+}
+
+h3 {
+    color: white;
+    font-size: 10px;
+   
+  
+}
+
+/*h4 {
+    color: white;
+    font-size: 10px;
+    text-align :center;
+}*/

@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "4K OEE Chart";
+    Layout = "";
+
+}
+<script type="text/javascript" src="~/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="~/js/chartjsv4.js"></script>
+<script type="text/javascript" src="~/js/chartjs-plugin-datalabels.js"></script>
+<script type="text/javascript" src="/_framework/aspnetcore-browser-refresh.js"></script>
+<link rel="stylesheet" href="~/css/ChartTable4K.css" />
+@*<h1>Chart</h1>*@
+<table>
+    <colgroup>
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+        <col class="dark-blue-grad">
+
+    </colgroup>
+    <tr>
+        <th>ORLOF 1</th>
+        <th>ORLOF 2</th>
+        <th>ORLOF 3</th>
+        <th>ORLOF 4</th>
+        <th>ORLOF 5</th>
+        <th>SUSI 1</th>
+        <th>SUSI 2</th>
+
+    </tr>
+
+    <tr>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan1" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan2" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan3" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan4" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan5" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan6" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-1strow">
+                <h3>OEE Shift : 58%</h3>
+                <canvas id="layanan7" height="375" width="340"></canvas>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>OEE Total : 78%</td>
+        <td>OEE Total : 58%</td>
+        <td>OEE Total : 78%</td>
+        <td>OEE Total : 58%</td>
+        <td>OEE Total : 38%</td>
+        <td>OEE Total : 28%</td>
+        <td>OEE Total : 18%</td>
+
+    </tr>
+    <tr>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB1" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB2" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB3" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB4" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB5" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB6" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 78%</h3>
+                <canvas id="barchartB7" height="375" width="340"></canvas>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+    </tr>
+    <tr>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC1" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC2" height="375" width="340"> </canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC3" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC4" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC5" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC6" height="375" width="340"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+
+                <canvas id="barchartC7" height="375" width="340"></canvas>
+            </div>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript" src="~/js/Oeeonly4K.js"></script>
+@*<script src="~/js/Oeeandjob.js"></script>*@
+@*<script type="text/javascript">
+    getItems();
+
+</script>*@
