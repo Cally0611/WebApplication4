@@ -29,117 +29,232 @@ $.each(numbers, function (index, value) {
 
     const ctx = document.getElementById(chartnum);
     ctx.classList.add('insidecanvas');
-    console.log(ctx);
     var background_1 = gradientcolor(ctx.getContext("2d"));
-    //console.log(background_1);
-    //console.log(chartnum);
+    console.log(ctx);
 
 
-    var data = {
-        datasets: [{
+    if (value == 3 || value == 4) {
+        const ctx1 = ctx.getContext("2d");
+        ctx1.font = "30px Verdana";
+        ctx1.fillStyle = "white";
+        ctx1.textAlign = "center";
+        ctx1.fillText("Maintenance", ctx.width / 2, ctx.height / 2);
+    }
+    else if (value == 1 || value == 2) {
+        var data = {
+            datasets: [{
 
-            data: [135, 55, 40, 30],
-            backgroundColor: [
-                background_1,
-                background_1,
-                background_1,
-                background_1,
+                data: [],
+                backgroundColor: [
+
+                ],
+                color: 'white',
+                barThickness: 30
+            }],
+            labels: [
+
             ],
-            color: 'white',
-            barThickness: 30
-        }],
-        labels: [
-            ['Change', 'Roller'], ['Short', 'Wash'], ['Feeder', 'Stop'], ['Change', 'Cablone', 'Plate']
-        ],
 
 
-    };
-    var myDoughnutChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: {
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
 
-            responsive: false,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    suggestedMin: 0,
-                    suggestedMax: 160,
-                    fontColor: "white",
-                    ticks: {
-                        /*      minRotation: 90,*/
-                        color: "#f5f5f5",
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 160,
+                        fontColor: "white",
+                        ticks: {
+                            /*      minRotation: 90,*/
+                            color: "#f5f5f5",
 
-                    },
-                    border: {
-                        display: true
-                    },
-                    grid: {
-                        color: function (context) {
-                            if (context.tick.value == 0) {
-                                return '#8A9A5B'
-                            }
-
-                            /* return '#000000';*/
                         },
+                        border: {
+                            display: true
+                        },
+                        grid: {
+                            color: function (context) {
+                                if (context.tick.value == 0) {
+                                    return '#8A9A5B'
+                                }
+
+                                /* return '#000000';*/
+                            },
+                        }
+
+                    },
+                    x: {
+                        //type: 'category',
+
+                        //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        ticks: {
+                            /* minRotation: 90,*/
+                            color: "#f5f5f5",
+                            align: 'center'
+                        },
+
                     }
-
                 },
-                x: {
-                    //type: 'category',
 
-                    //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                    ticks: {
-                        /* minRotation: 90,*/
-                        color: "#f5f5f5",
-                        align: 'center'
-                    },
-
-                }
-            },
-
-            plugins: {
-                title: {
-                    display: false,
-                    position: 'top',
-                    align : 'start',
-                    //text: machine[index],
-                    text: 'OEE Shift : 58%',
-                    color: 'white',
-                    padding: {
-                        top: 10,
-                        bottom: 30
-                    },
-                },
-                legend: {
-                    labels: {
-
+                plugins: {
+                    title: {
+                        display: false,
+                        position: 'top',
+                        align: 'start',
+                        //text: machine[index],
+                        text: 'OEE Shift : 58%',
                         color: 'white',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        },
                     },
-                    display: false,
-                },
-                datalabels: {
-                    //backgroundColor: function (context) {
-                    //    return context.dataset.backgroundColor;
-                    //},
-                    //borderRadius: 4,
-                    anchor: 'end',
-                    align: 'top',
-                    color: 'white',
-                    font: {
-                        weight: 'bold'
-                    },
-                    formatter: Math.round,
+                    legend: {
+                        labels: {
 
-                },
-                layout: {
-                    padding: 20
+                            color: 'white',
+                        },
+                        display: false,
+                    },
+                    datalabels: {
+                        //backgroundColor: function (context) {
+                        //    return context.dataset.backgroundColor;
+                        //},
+                        //borderRadius: 4,
+                        anchor: 'end',
+                        align: 'top',
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round,
+
+                    },
+                    layout: {
+                        padding: 20
+                    }
                 }
             }
-        }
 
-    });
+        });
+    }
+    else {
+        var data = {
+            datasets: [{
 
+                data: [40,],
+                backgroundColor: [
+                    background_1,
+                ],
+                color: 'white',
+                barThickness: 30
+            }],
+            labels: [
+                ['Feeder', 'Stop']
+            ],
+
+
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 160,
+                        fontColor: "white",
+                        ticks: {
+                            /*      minRotation: 90,*/
+                            color: "#f5f5f5",
+
+                        },
+                        border: {
+                            display: true
+                        },
+                        grid: {
+                            color: function (context) {
+                                if (context.tick.value == 0) {
+                                    return '#8A9A5B'
+                                }
+
+                                /* return '#000000';*/
+                            },
+                        }
+
+                    },
+                    x: {
+                        //type: 'category',
+
+                        //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        ticks: {
+                            /* minRotation: 90,*/
+                            color: "#f5f5f5",
+                            align: 'center'
+                        },
+
+                    }
+                },
+
+                plugins: {
+                    title: {
+                        display: false,
+                        position: 'top',
+                        align: 'start',
+                        //text: machine[index],
+                        text: 'OEE Shift : 58%',
+                        color: 'white',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        },
+                    },
+                    legend: {
+                        labels: {
+
+                            color: 'white',
+                        },
+                        display: false,
+                    },
+                    datalabels: {
+                        //backgroundColor: function (context) {
+                        //    return context.dataset.backgroundColor;
+                        //},
+                        //borderRadius: 4,
+                        anchor: 'end',
+                        align: 'top',
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round,
+
+                    },
+                    layout: {
+                        padding: 20
+                    }
+                }
+            }
+
+        });
+    }
+
+
+
+
+
+    
+    
+   
+    
 
 });
 ////second row chart
@@ -150,113 +265,323 @@ $.each(numbers, function (index, value) {
     ctx.classList.add('insidecanvas');
     console.log(ctx);
     var background_1 = gradientcolor(ctx.getContext("2d"));
-    var data = {
-        datasets: [{
+   
+    if (value == 3 || value == 4) {
+        const ctx1 = ctx.getContext("2d");
+        ctx1.font = "30px Verdana";
+        ctx1.fillStyle = "white";
+        ctx1.textAlign = "center";
+        ctx1.fillText("Maintenance", ctx.width / 2, ctx.height / 2);
+    }
+    else if (value == 1) {
+        var data = {
+            datasets: [{
 
-            data: [135, 55, 40, 30],
-            backgroundColor: [
-                background_1,
-                background_1,
-                background_1,
-                background_1,
+                data: [10],
+                backgroundColor: [
+                    background_1
+                ],
+                color: 'white',
+                barThickness: 30
+            }],
+            labels: ['Others'
+
             ],
-            color: 'white',
-            barThickness: 30
-        }],
-        labels: [
-            ['Change', 'Roller'], ['Short', 'Wash'], ['Feeder', 'Stop'], ['Change', 'Cablone', 'Plate']
-        ],
 
 
-    };
-    var myDoughnutChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: {
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
 
-            responsive: false,
-            maintainAspectRatio: false,
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 160,
+                        fontColor: "white",
+                        ticks: {
+                            /*      minRotation: 90,*/
+                            color: "#f5f5f5",
 
-            scales: {
-                y: {
-                    suggestedMin: 0,
-                    suggestedMax: 160,
-                    fontColor: "white",
-                    ticks: {
-                        /*      minRotation: 90,*/
-                        color: "#f5f5f5",
-
-                    },
-                    border: {
-                        display: true
-                    },
-                    grid: {
-                        color: function (context) {
-                            if (context.tick.value == 0) {
-                                return '#8A9A5B'
-                            }
-
-                            /* return '#000000';*/
                         },
+                        border: {
+                            display: true
+                        },
+                        grid: {
+                            color: function (context) {
+                                if (context.tick.value == 0) {
+                                    return '#8A9A5B'
+                                }
+
+                                /* return '#000000';*/
+                            },
+                        }
+
+                    },
+                    x: {
+                        //type: 'category',
+
+                        //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        ticks: {
+                            /* minRotation: 90,*/
+                            color: "#f5f5f5",
+                            align: 'center'
+                        },
+
                     }
-
                 },
-                x: {
-                    //type: 'category',
 
-                    //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                    ticks: {
-                        /* minRotation: 90,*/
-                        color: "#f5f5f5",
-                        align: 'center'
-                    },
-
-                }
-            },
-
-            plugins: {
-
-                title: {
-                    display: true,
-                    position: 'top',
-                    align: 'center',
-                    //text: machine[index],
-                    text: 'Order Name',
-                    color: 'white',
-                    padding: {
-                        top: 10,
-                        bottom: 30
-                    },
-                },
-                legend: {
-                    labels: {
-
+                plugins: {
+                    title: {
+                        display: true,
+                        position: 'top',
+                        align: 'centre',
+                        //text: machine[index],
+                        text: ['5000 Kwacha RS'],
                         color: 'white',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        },
                     },
-                    display: false,
-                },
-                datalabels: {
-                    //backgroundColor: function (context) {
-                    //    return context.dataset.backgroundColor;
-                    //},
-                    //borderRadius: 4,
-                    anchor: 'end',
-                    align: 'top',
-                    color: 'white',
-                    font: {
-                        weight: 'bold'
-                    },
-                    formatter: Math.round,
+                    legend: {
+                        labels: {
 
+                            color: 'white',
+                        },
+                        display: false,
+                    },
+                    datalabels: {
+                        //backgroundColor: function (context) {
+                        //    return context.dataset.backgroundColor;
+                        //},
+                        //borderRadius: 4,
+                        anchor: 'end',
+                        align: 'top',
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round,
+
+                    },
+                    layout: {
+                        padding: 20
+                    }
                 }
+            }
 
-            },
-          
+        });
+    }
+    else if (value == 2) {
+        var data = {
+            datasets: [{
 
-        }
+                data: [10],
+                backgroundColor: [
+                    background_1
+                ],
+                color: 'white',
+                barThickness: 30
+            }],
+            labels: ['Others'
 
-    });
+            ],
 
+
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 160,
+                        fontColor: "white",
+                        ticks: {
+                            /*      minRotation: 90,*/
+                            color: "#f5f5f5",
+
+                        },
+                        border: {
+                            display: true
+                        },
+                        grid: {
+                            color: function (context) {
+                                if (context.tick.value == 0) {
+                                    return '#8A9A5B'
+                                }
+
+                                /* return '#000000';*/
+                            },
+                        }
+
+                    },
+                    x: {
+                        //type: 'category',
+
+                        //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        ticks: {
+                            /* minRotation: 90,*/
+                            color: "#f5f5f5",
+                            align: 'center'
+                        },
+
+                    }
+                },
+
+                plugins: {
+                    title: {
+                        display: true,
+                        position: 'top',
+                        align: 'centre',
+                        //text: machine[index],
+                        text: ['1000 Kwacha RS'],
+                        color: 'white',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        },
+                    },
+                    legend: {
+                        labels: {
+
+                            color: 'white',
+                        },
+                        display: false,
+                    },
+                    datalabels: {
+                        //backgroundColor: function (context) {
+                        //    return context.dataset.backgroundColor;
+                        //},
+                        //borderRadius: 4,
+                        anchor: 'end',
+                        align: 'top',
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round,
+
+                    },
+                    layout: {
+                        padding: 20
+                    }
+                }
+            }
+
+        });
+    }
+    else {
+        var data = {
+            datasets: [{
+
+                data: [40,],
+                backgroundColor: [
+                    background_1,
+                ],
+                color: 'white',
+                barThickness: 30
+            }],
+            labels: [
+                ['Feeder', 'Stop']
+            ],
+
+
+        };
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 160,
+                        fontColor: "white",
+                        ticks: {
+                            /*      minRotation: 90,*/
+                            color: "#f5f5f5",
+
+                        },
+                        border: {
+                            display: true
+                        },
+                        grid: {
+                            color: function (context) {
+                                if (context.tick.value == 0) {
+                                    return '#8A9A5B'
+                                }
+
+                                /* return '#000000';*/
+                            },
+                        }
+
+                    },
+                    x: {
+                        //type: 'category',
+
+                        //labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        ticks: {
+                            /* minRotation: 90,*/
+                            color: "#f5f5f5",
+                            align: 'center'
+                        },
+
+                    }
+                },
+
+                plugins: {
+                    title: {
+                        display: true,
+                        position: 'top',
+                        align: 'centre',
+                        //text: machine[index],
+                        text: '1000 Kwacha FS',
+                        color: 'white',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        },
+                    },
+                    legend: {
+                        labels: {
+
+                            color: 'white',
+                        },
+                        display: false,
+                    },
+                    datalabels: {
+                        //backgroundColor: function (context) {
+                        //    return context.dataset.backgroundColor;
+                        //},
+                        //borderRadius: 4,
+                        anchor: 'end',
+                        align: 'top',
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round,
+
+                    },
+                    layout: {
+                        padding: 20
+                    }
+                }
+            }
+
+        });
+    }
 
 });
 ////third row chart

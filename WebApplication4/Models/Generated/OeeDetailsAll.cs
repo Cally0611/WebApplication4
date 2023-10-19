@@ -36,4 +36,8 @@ public partial class OeeDetailsAll
 
     [Column("Inserted_TimeStamp")]
     public DateTime InsertedTimeStamp { get; set; }
+
+    [ForeignKey("OeeMachine")]
+    [InverseProperty("OeeDetailsAlls")]
+    public virtual Machine OeeMachineNavigation { get; set; } = null!;
 }

@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-//using WebApplication4.Data;
+using NuGet.Configuration;
+using System.Configuration;
+using WebApplication4.Data;
+using WebApplication4.Service;
+using WebApplication4.Helpers;
+using Microsoft.CodeAnalysis.Emit;
 
 namespace WebApplication4
 {
@@ -12,12 +17,19 @@ namespace WebApplication4
             // Add services to the container.
             builder.Services.AddControllers();
             builder.Services.AddControllersWithViews();
-    //        builder.Services.AddDbContext<OeedbcenterContext>(options =>
-    //options.UseSqlServer(builder.Configuration.GetConnectionString("OEEDashboardCon")));
+            builder.Services.AddDbContext<OeedashboardContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("OEEDashboardCon")));
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddScoped<DBOperationService>();
+            builder.Services.AddScoped<IOEERepository, DBOperationService>();
 
+            builder.Services.AddScoped<DateTimeHelper>();
+            builder.Services.AddHostedService<TimedHostedService>();
 
-
+       
+            //Store config settings in one object
+            builder.Services.Configure<ShiftsService>(builder.Configuration.GetSection("ShiftSettings"));
+            builder.Services.AddTransient<ITransientService, ShiftsService>();
 
             var app = builder.Build();
 
@@ -36,8 +48,8 @@ namespace WebApplication4
             app.UseRouting();
 
             app.UseAuthorization();
-     
 
+            app.Logger.LogInformation("Starting the app");
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Chart}/{id?}");
