@@ -7,7 +7,7 @@ namespace WebApplication4.Service
         //method that returns SHift type
     
 
-        public int GetCurrentShift(DateTime currtime);
-       
+        public int GetCurrentShift();
+        public DateTime GetDateBasedonShift();
     }
 }

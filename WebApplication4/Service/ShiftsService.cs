@@ -17,17 +17,39 @@ namespace WebApplication4.Service
         }
 
 
-        public int GetCurrentShift(DateTime now)
+        public int GetCurrentShift()
         {
             if(_shifts.CurrTime > _shifts.FirstShift && _shifts.CurrTime < _shifts.SecondShift)
             {
-                return 1;
+                return _shifts.ShiftType = 1;
             }
             else
             {
-                return 2;
+                return _shifts.ShiftType = 2;
             }
         }
+
+
+        public DateTime GetDateBasedonShift()
+        {
+            if (_shifts.CurrTime > _shifts.FirstShift && _shifts.CurrTime < _shifts.SecondShift)
+            {
+                return _shifts.DateBasedonShift = DateTime.Now.Date;
+            }
+            else if (_shifts.CurrTime > _shifts.SecondShift && _shifts.CurrTime < _shifts.SharpMidnight)
+            {
+                return _shifts.DateBasedonShift = DateTime.Now.Date;
+            }
+            else 
+            {
+                return _shifts.DateBasedonShift= DateTime.Now.AddDays(-1).Date;
+
+            }
+
+        }
+       
+
+
 
     }
 }

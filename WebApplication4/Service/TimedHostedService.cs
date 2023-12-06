@@ -17,29 +17,43 @@ namespace WebApplication4.Service
             
         }
 
+        public int ExecutionCount
+        {
+            get
+            {
+                return executionCount;
+            }
+            set
+            {
+                executionCount = value;
+            }
+        }
+  
         public Task StartAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("Timed Hosted Service running.");
 
-            _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(10),
-                TimeSpan.FromSeconds(10));
+            _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(1),
+                TimeSpan.FromSeconds(1));
 
             return Task.CompletedTask;
         }
 
         private void DoWork(object? state)
         {
-            var count = Interlocked.Increment(ref executionCount);
+            //var count = Interlocked.Increment(ref executionCount);
+
+            executionCount = Interlocked.Increment(ref executionCount);
 
             using (IServiceScope scope = _serviceProvider.CreateScope())
             {
                 DBOperationService _contextservice = scope.ServiceProvider.GetRequiredService<DBOperationService>();
     
-                _contextservice.GetOEEStopReasons();
+                _contextservice.GetOEEbyShift();
               
             }
             _logger.LogInformation(
-                "Timed Hosted Service is working. {currentdate} Count: {Count}", DateTime.Now.ToString(), count);
+                "Timed Hosted Service is working. {currentdate} Count: {Count}", DateTime.Now.ToString(), executionCount);
         }
 
         public Task StopAsync(CancellationToken stoppingToken)

@@ -20,6 +20,9 @@ public partial class Machine
     [InverseProperty("Machine")]
     public virtual ICollection<AllMachine> AllMachines { get; set; } = new List<AllMachine>();
 
+    [InverseProperty("Machine")]
+    public virtual ICollection<OeeCalculationAll> OeeCalculationAlls { get; set; } = new List<OeeCalculationAll>();
+
     [InverseProperty("OeeMachineNavigation")]
     public virtual ICollection<OeeDetailsAll> OeeDetailsAlls { get; set; } = new List<OeeDetailsAll>();
 }

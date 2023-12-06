@@ -4,6 +4,7 @@
     Layout = "";
   
 }
+@*<meta http-equiv="refresh" content="10">*@
 <script type="text/javascript" src="~/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="~/js/chartjsv4.js"></script>
 <script type="text/javascript" src="~/js/chartjs-plugin-datalabels.js"></script>
@@ -27,15 +28,14 @@
         <th>Orlof 3</th>
         <th>Orlof 4</th>
         <th>Orlof 5</th>
-        <th>Susi 1</th>
-        <th>Susi 2</th>
+   
       
     </tr>
     
     <tr>
         <td>
             <div class="div-1strow">
-                <h3>OEE Shift : 58%</h3>
+                <h3>OEE Shift : 0%</h3>
                 <canvas id="layanan1" height="280" ></canvas>
             </div>
         </td>
@@ -59,22 +59,11 @@
         </td>
         <td>
             <div class="div-1strow">
-                <h3>OEE Shift : 58%</h3>
+                <h3>OEE Shift : 0%</h3>
                 <canvas id="layanan5" height="280"></canvas>
             </div>
         </td>
-        <td>
-            <div class="div-1strow">
-                <h3>OEE Shift : 58%</h3>
-                <canvas id="layanan6" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-1strow">
-                <h3>OEE Shift : 58%</h3>
-                <canvas id="layanan7" height="280"></canvas>
-            </div>
-        </td>
+    
     </tr>
     <tr>
         <td>OEE Total : 78%</td>
@@ -82,111 +71,93 @@
         <td>OEE Total : 78%</td>
         <td>OEE Total : 58%</td>
         <td>OEE Total : 38%</td>
-        <td>OEE Total : 28%</td>
-        <td>OEE Total : 18%</td>
 
     </tr>
     <tr>
         <td>
             <div class="div-2ndrow">
-                <h3>OEE Total : 78%</h3>
-                <canvas id="barchartB1" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-2ndrow">
-                <h3>OEE Total : 0%</h3>
-                <canvas id="barchartB2" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-2ndrow">
-                <h3>OEE Total : 0%</h3>
-                <canvas id="barchartB3" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-2ndrow">
-                <h3>OEE Total : 0%</h3>
-                <canvas id="barchartB4" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-2ndrow">
-                <h3>OEE Total : 0%</h3>
-                <canvas id="barchartB5" height="280"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-2ndrow">
-                <h3>OEE Total : 0%</h3>
+                <h3 id = "oeejobID6">OEE Total : 0%</h3>
                 <canvas id="barchartB6" height="280"></canvas>
             </div>
         </td>
         <td>
             <div class="div-2ndrow">
-                <h3>OEE Total : 78%</h3>
+                <h3 id="oeejobID7">OEE Total : 0%</h3>
                 <canvas id="barchartB7" height="280"></canvas>
             </div>
         </td>
-    </tr>
-    <tr>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-        <td>Daily OEE</td>
-    </tr>
-    <tr>
         <td>
-            <div class="div-3rdrow">
-  
-                <canvas id="barchartC1" height="300px"></canvas>
+            <div class="div-2ndrow">
+                <h3 id="oeejobID8">OEE Total : 0%</h3>
+                <canvas id="barchartB8" height="280"></canvas>
             </div>
         </td>
-        <td>
-            <div class="div-3rdrow">
-   
-                <canvas id="barchartC2" height="300px"> </canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-3rdrow">
-              
-                <canvas id="barchartC3" height="300px"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-3rdrow">
-                
-                <canvas id="barchartC4" height="300px"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-3rdrow">
-               
-                <canvas id="barchartC5" height="300px"></canvas>
-            </div>
-        </td>
-        <td>
-            <div class="div-3rdrow">
     
+        <td>
+            <div class="div-2ndrow">
+                <h3 id="oeejobID5">OEE Total : 0%</h3>
+                <canvas id="barchartB5" height="280"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-2ndrow">
+                <h3 id="oeejobID10">OEE Total : 0%</h3>
+                <canvas id="barchartB10" height="280"></canvas>
+            </div>
+        </td>
+   @*     <td>
+            <div class="div-2ndrow">
+                <h3>OEE Total : 0%</h3>
+                <canvas id="barchartB5" height="280"></canvas>
+            </div>
+        </td>*@
+    </tr>
+    <tr>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+        <td>Daily OEE</td>
+
+    </tr>
+    <tr>
+        <td>
+           @* Orlof 1*@
+            <div class="div-3rdrow">
                 <canvas id="barchartC6" height="300px"></canvas>
             </div>
         </td>
         <td>
             <div class="div-3rdrow">
-              
-                <canvas id="barchartC7" height="300px"></canvas>
+   
+                <canvas id="barchartC7" height="300px"> </canvas>
             </div>
         </td>
+        <td>
+            <div class="div-3rdrow">
+              
+                <canvas id="barchartC8" height="300px"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+                
+                <canvas id="barchartC5" height="300px"></canvas>
+            </div>
+        </td>
+        <td>
+            <div class="div-3rdrow">
+               
+                <canvas id="barchartC10" height="300px"></canvas>
+            </div>
+        </td>
+   
     </tr>
 </table>
 <script type="text/javascript" src="~/js/Oeeonly.js"></script>
 @*<script src="~/js/Oeeandjob.js"></script>*@
 <script type="text/javascript">
-    getItems();
-
+   getItems();
+    getItemsByJob();
+    getItemsOEEByShift();
 </script>

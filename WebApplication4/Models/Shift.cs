@@ -12,5 +12,8 @@
            get { return DateTime.Now.TimeOfDay; }
         }
         
+        public DateTime DateBasedonShift { get; set; }
+
+        public int ShiftType { get; set; }
     }
 }
